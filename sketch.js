@@ -3,6 +3,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Constraint
 
 
 
@@ -23,9 +24,6 @@ function setup() {
   //creating rope using rope class
   rope1 = new Rope(ball1.body,ground.body,ball1.radius*2,0);
 
-	
-
-
 	Engine.run(engine)
   
   }
@@ -44,6 +42,16 @@ function draw() {
   rope1.display();
  // drawSprites();
  
+}
+
+function keyPressed(){
+  
+}
+
+function drawLine(){
+  bodyA = ball1.body
+  bodyB = roof.body
+  line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
 }
 
 
