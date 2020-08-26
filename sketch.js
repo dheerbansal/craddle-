@@ -22,7 +22,7 @@ function setup() {
   ground = new Ground(390,150,300,25);
 
   //creating rope using rope class
-  rope1 = new Rope(ball1.body,ground.body,ball1.radius*2,0);
+  rope1 = new Rope(ball1.body,ground.body,-ball1.radius*2,0);
 
 	Engine.run(engine)
   
@@ -32,7 +32,8 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(255);
-  
+ 
+  //displaying the objects
   ball1.display();
   ball2.display();
   ball3.display();
@@ -44,14 +45,15 @@ function draw() {
  
 }
 
-function keyPressed(){
-  
-}
 
-function drawLine(){
-  bodyA = ball1.body
-  bodyB = roof.body
-  line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
+
+function drawLine(constraint){
+  ballBodyPosition = constraint.bodyA.position
+  groundBodyPosition = constraint.bodyB.position
+  groundBodyOffset = constraint.pointB
+  groundBodyX = groundBodyPosition.x + groundBodyOffset.x
+  groundBodyY = groundBodyPosition.y + groundBodyOffset.y
+  line(ballBodyPosition.x,ballBodyPosition.y,groundBodyX,groundBodyY);
 }
 
 
