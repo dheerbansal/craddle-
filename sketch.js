@@ -31,6 +31,42 @@ function setup() {
 var constraint = Constraint.create(options);
   World.add(world,constraint)
 
+  var options= {
+    bodyA:ball2.body,
+    bodyB:ground.body,
+    length: 400,
+    stiffness:0.9
+ }
+ var constraint = Constraint.create(options);
+   World.add(world,constraint)
+
+   var options= {
+    bodyA:ball3.body,
+    bodyB:ground.body,
+    length: 400,
+    stiffness:0.9
+ }
+ var constraint = Constraint.create(options);
+   World.add(world,constraint)
+
+   var options= {
+    bodyA:ball4.body,
+    bodyB:ground.body,
+    length: 400,
+    stiffness:0.9
+ }
+ var constraint = Constraint.create(options);
+   World.add(world,constraint)
+
+   var options= {
+    bodyA:ball5.body,
+    bodyB:ground.body,
+    length: 400,
+    stiffness:0.9
+ }
+ var constraint = Constraint.create(options);
+   World.add(world,constraint)
+
   var render = Render.create({
 		element:document.body,
 		engine: engine,
