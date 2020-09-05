@@ -4,6 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint
+const Render = Matter.Render
 
 
 
@@ -21,6 +22,15 @@ function setup() {
   //making the ground using ground clas
   ground = new Ground(390,150,300,25);
 
+  var render = Render.create({
+		element:document.body,
+		engine: engine,
+		options:{
+			width:1200,
+			height:700,
+			wireframes:false
+		}
+	});
   //creating rope using rope class
   rope1 = new Rope(ball1.body,ground.body,-ball1.radius*2,0);
 
@@ -55,6 +65,12 @@ function drawLine(constraint){
   groundBodyY = groundBodyPosition.y + groundBodyOffset.y
   line(ballBodyPosition.x,ballBodyPosition.y,groundBodyX,groundBodyY);
 }
+function mouseDragged(){
+  Matter.Body.setPosition(ball1.body,{x:mouseX,y:mouseY})
+}
 
+function mouseReleased(){
+  rope.fly();
+}
 
 
