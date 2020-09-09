@@ -23,6 +23,17 @@ function setup() {
   ground = new Ground(700,150,700,25);
 
   var options= {
+    bodyA:ball1.body,
+    bodyB:ground.body,
+    length: 400,
+    stiffness:0.9
+ }
+ var constraint = Constraint.create(options);
+   World.add(world,constraint)
+  
+  //rope1 = new Rope()
+
+  var options= {
    bodyA:ball1.body,
    bodyB:ground.body,
    length: 400,
@@ -67,6 +78,9 @@ var constraint = Constraint.create(options);
  var constraint = Constraint.create(options);
    World.add(world,constraint)
 
+   line(ball1.x,ball1.y,ground.x,ground.y)
+
+
   var render = Render.create({
 		element:document.body,
 		engine: engine,
@@ -75,7 +89,9 @@ var constraint = Constraint.create(options);
 			height:700,
 			wireframes:false
 		}
-	});
+  });
+  
+ // line(ball1.body.position.x,ball1.body.position.y,ground.body.position.x,ground.body.position.y)
   //creating rope using rope class
  // rope1 = new Rope(ball1.body,ground.body,-ball1.radius*2,0);
 
@@ -97,6 +113,13 @@ function draw() {
   ball4.display();
   ball5.display();
   ground.display();
+  line(ball1.body.position.x,ball1.body.position.y,ground.body.position.x,ground.body.position.y)
+  line(ball2.body.position.x,ball2.body.position.y,ground.body.position.x,ground.body.position.y)
+  line(ball3.body.position.x,ball3.body.position.y,ground.body.position.x,ground.body.position.y)
+  line(ball4.body.position.x,ball4.body.position.y,ground.body.position.x,ground.body.position.y)
+  line(ball5.body.position.x,ball5.body.position.y,ground.body.position.x,ground.body.position.y)
+
+  //line(ball1.x,ball1.y,ground.x,ground.y)
   //rope1.display();
  // drawSprites();
 
@@ -117,9 +140,10 @@ function mouseDragged(){
   Matter.Body.setPosition(ball1.body,{x:mouseX,y:mouseY})
 }
 
-
-function mouseReleased(){
-  rope.fly();
+function line(){
+  line(ball1.x,ball1.y,ground.x,ground.y)
 }
+
+
 
 
