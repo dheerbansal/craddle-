@@ -13,20 +13,20 @@ function setup() {
     engine = Engine.create();
 	world = engine.world;
 //making the ball's using Bob class
-	ball1 = new Bob(500,300,60);
+	ball1 = new Bob(540,300,60);
 	ball2 = new Bob(580,300,60);
-	ball3 = new Bob(680,300,60);
-	ball4 = new Bob(780,300,60);
-  ball5 = new Bob(880,300,60);
+	ball3 = new Bob(620,300,60);
+	ball4 = new Bob(660,300,60);
+  ball5 = new Bob(700,300,60);
   
   //making the ground using ground clas
   ground = new Ground(700,200,700,25);
 
-  rope = new Rope(500,300,ball1.body);
+  rope = new Rope(540,300,ball1.body);
   rope1 = new Rope(580,300,ball2.body)
-  rope2 = new Rope(680,300,ball3.body);
-  rope3 = new Rope(780,300,ball4.body);
-  rope4 = new Rope(880,300,ball5.body);
+  rope2 = new Rope(620,300,ball3.body);
+  rope3 = new Rope(660,300,ball4.body);
+  rope4 = new Rope(700,300,ball5.body);
 
    //line(ball1.x,ball1.y,ground.x,ground.y)
 
@@ -64,11 +64,11 @@ function draw() {
   ball4.display();
   ball5.display();
   ground.display();
-  line(ball1.body.position.x,ball1.body.position.y,500,200)
+  line(ball1.body.position.x,ball1.body.position.y,540,200)
   line(ball2.body.position.x,ball2.body.position.y,580,200)
-  line(ball3.body.position.x,ball3.body.position.y,680,200)
-  line(ball4.body.position.x,ball4.body.position.y,780,200)
-  line(ball5.body.position.x,ball5.body.position.y,880,200)
+  line(ball3.body.position.x,ball3.body.position.y,620,200)
+  line(ball4.body.position.x,ball4.body.position.y,660,200)
+  line(ball5.body.position.x,ball5.body.position.y,700,200)
 
 
  // line(ball2.body.position.x,ball2.body.position.y,ground.body.position.x,ground.body.position.y)
