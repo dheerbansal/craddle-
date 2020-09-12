@@ -12,13 +12,8 @@ class Ground{
         World.add(world, this.body)
        }
        display(){
-           var groundPos = this.body.position
-           push();
-           translate(groundPos.x,groundPos.y)
            rectMode(CENTER)
-           fill(0)
-           rect(0,0,this.width, this.height);
-           pop();          
+           rect(this.x,this.y,this.width,this.height)   
         }
 
    }
